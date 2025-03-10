@@ -52,6 +52,7 @@ namespace Trading_Company
                     context.Warehouses.Add(warehouse);
                     context.SaveChanges();
                     MessageBox.Show("Warehouse added successfully!");
+                    LoadWarehousesIntoComboBox();
                 }
             }
             catch (Exception ex)
@@ -340,7 +341,7 @@ namespace Trading_Company
                 }
                 else
                 {
-                    MessageBox.Show("No Supplier was found with this name or phone!");
+                    MessageBox.Show("No supplier was found with this name or phone!");
                 }
             }
         }
@@ -389,6 +390,129 @@ namespace Trading_Company
         }
         #endregion
 
+        #region Customer Tab
+        private void addCustomerBtn_Click(object sender, EventArgs e)
+        {
+            if (!AreCustomerTabFieldsValid())
+            {
+                MessageBox.Show("Please enter missing fields");
+                return;
+            }
 
+            string name = customerNameTxt.Text;
+            string phone = customerPhoneTxt.Text;
+            string mobile = customerMobileTxt.Text;
+            string fax = customerFaxTxt.Text;
+            string email = customerEmailTxt.Text;
+            string website = customerWebsiteTxt.Text;
+            using (var context = new ApplicationDbContext())
+            {
+                context.Customers.Add(new Customer()
+                {
+                    Name = name,
+                    Phone = phone,
+                    Mobile = mobile,
+                    Fax = fax,
+                    Email = email,
+                    Website = website,
+                });
+                context.SaveChanges();
+                MessageBox.Show("Customer is added successfully");
+                LoadCustomers();
+            }
+            ClearCustomerTabFields();
+        }
+
+        private void updateCustomerBtn_Click(object sender, EventArgs e)
+        {
+            string name = customerNameTxt.Text;
+            string phone = customerPhoneTxt.Text;
+            string mobile = customerMobileTxt.Text;
+            string fax = customerFaxTxt.Text;
+            string email = customerEmailTxt.Text;
+            string website = customerWebsiteTxt.Text;
+
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(phone))
+            {
+                MessageBox.Show("Please enter name and phone of the customer you want to update");
+                return;
+            }
+            using (var context = new ApplicationDbContext())
+            {
+                var customerToBeUpdated = context.Customers.FirstOrDefault(c => c.Name == name && c.Phone == phone);
+                if (customerToBeUpdated != null)
+                {
+                    if (!string.IsNullOrEmpty(fax))
+                    {
+                        customerToBeUpdated.Fax = fax;
+                    }
+                    if (!string.IsNullOrEmpty(mobile))
+                    {
+                        customerToBeUpdated.Mobile = mobile;
+                    }
+                    if (!string.IsNullOrEmpty(email))
+                    {
+                        customerToBeUpdated.Email = email;
+                    }
+                    if (!string.IsNullOrEmpty(website))
+                    {
+                        customerToBeUpdated.Website = website;
+                    }
+                    context.SaveChanges();
+                    MessageBox.Show("Customer updated successfully!");
+                    LoadCustomers();
+                    ClearCustomerTabFields();
+                }
+                else
+                {
+                    MessageBox.Show("No customer was found with this name or phone!");
+                }
+            }
+        }
+
+        bool AreCustomerTabFieldsValid()
+        {
+            return (!string.IsNullOrEmpty(customerNameTxt.Text) &&
+                    !string.IsNullOrEmpty(customerPhoneTxt.Text) &&
+                    !string.IsNullOrEmpty(customerMobileTxt.Text) &&
+                    !string.IsNullOrEmpty(customerFaxTxt.Text) &&
+                    !string.IsNullOrEmpty(customerEmailTxt.Text) &&
+                    !string.IsNullOrEmpty(customerWebsiteTxt.Text));
+        }
+        void ClearCustomerTabFields()
+        {
+            customerNameTxt.Text = "";
+            customerPhoneTxt.Text = "";
+            customerMobileTxt.Text = "";
+            customerFaxTxt.Text = "";
+            customerEmailTxt.Text = "";
+            customerWebsiteTxt.Text = "";
+        }
+
+        private void loadCustomersBtn_Click(object sender, EventArgs e)
+        {
+            LoadCustomers();
+        }
+
+        void LoadCustomers()
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var customers = context.Customers
+                    .Select(s => new
+                    {
+                        ID = s.CustomerID,
+                        Name = s.Name,
+                        Phone = s.Phone,
+                        Mobile = s.Mobile,
+                        Fax = s.Fax,
+                        Email = s.Email,
+                        Website = s.Website,
+                    }).ToList();
+                customerDataGrid.DataSource = customers;
+            }
+        }
+
+        #endregion
     }
 }

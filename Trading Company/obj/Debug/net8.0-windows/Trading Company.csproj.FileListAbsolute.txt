@@ -59,3 +59,4 @@ E:\ITI\LINQ\Trading Company\Trading Company\obj\Debug\net8.0-windows\refint\Trad
 E:\ITI\LINQ\Trading Company\Trading Company\obj\Debug\net8.0-windows\Trading Company.pdb
 E:\ITI\LINQ\Trading Company\Trading Company\obj\Debug\net8.0-windows\Trading Company.genruntimeconfig.cache
 E:\ITI\LINQ\Trading Company\Trading Company\obj\Debug\net8.0-windows\ref\Trading Company.dll
+E:\ITI\LINQ\Trading Company\Trading Company\obj\Debug\net8.0-windows\Trading Company.sourcelink.json

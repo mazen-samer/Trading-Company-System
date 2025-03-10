@@ -61,6 +61,7 @@
             label6 = new Label();
             label5 = new Label();
             supplierPage = new TabPage();
+            label20 = new Label();
             loadSuppliersBtn = new Button();
             label19 = new Label();
             updateSupplierBtn = new Button();
@@ -79,7 +80,23 @@
             label14 = new Label();
             label13 = new Label();
             customerPage = new TabPage();
-            label20 = new Label();
+            label27 = new Label();
+            loadCustomersBtn = new Button();
+            customerDataGrid = new DataGridView();
+            updateCustomerBtn = new Button();
+            addCustomerBtn = new Button();
+            customerWebsiteTxt = new TextBox();
+            customerEmailTxt = new TextBox();
+            customerMobileTxt = new TextBox();
+            customerFaxTxt = new TextBox();
+            customerPhoneTxt = new TextBox();
+            customerNameTxt = new TextBox();
+            label26 = new Label();
+            label25 = new Label();
+            label24 = new Label();
+            label23 = new Label();
+            label22 = new Label();
+            label21 = new Label();
             tabControl1.SuspendLayout();
             warehousesPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -88,6 +105,8 @@
             ((System.ComponentModel.ISupportInitialize)itemsDataGrid).BeginInit();
             supplierPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)suppliersDataGrid).BeginInit();
+            customerPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)customerDataGrid).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -429,6 +448,15 @@
             supplierPage.Text = "Supplier";
             supplierPage.UseVisualStyleBackColor = true;
             // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(183, 502);
+            label20.Name = "label20";
+            label20.Size = new Size(429, 20);
+            label20.TabIndex = 17;
+            label20.Text = "*You can update the supplier by providing his name and phone!";
+            // 
             // loadSuppliersBtn
             // 
             loadSuppliersBtn.Location = new Point(745, 493);
@@ -575,6 +603,23 @@
             // 
             // customerPage
             // 
+            customerPage.Controls.Add(label27);
+            customerPage.Controls.Add(loadCustomersBtn);
+            customerPage.Controls.Add(customerDataGrid);
+            customerPage.Controls.Add(updateCustomerBtn);
+            customerPage.Controls.Add(addCustomerBtn);
+            customerPage.Controls.Add(customerWebsiteTxt);
+            customerPage.Controls.Add(customerEmailTxt);
+            customerPage.Controls.Add(customerMobileTxt);
+            customerPage.Controls.Add(customerFaxTxt);
+            customerPage.Controls.Add(customerPhoneTxt);
+            customerPage.Controls.Add(customerNameTxt);
+            customerPage.Controls.Add(label26);
+            customerPage.Controls.Add(label25);
+            customerPage.Controls.Add(label24);
+            customerPage.Controls.Add(label23);
+            customerPage.Controls.Add(label22);
+            customerPage.Controls.Add(label21);
             customerPage.Location = new Point(4, 29);
             customerPage.Name = "customerPage";
             customerPage.Size = new Size(1147, 586);
@@ -582,14 +627,149 @@
             customerPage.Text = "Customer";
             customerPage.UseVisualStyleBackColor = true;
             // 
-            // label20
+            // label27
             // 
-            label20.AutoSize = true;
-            label20.Location = new Point(183, 502);
-            label20.Name = "label20";
-            label20.Size = new Size(429, 20);
-            label20.TabIndex = 17;
-            label20.Text = "*You can update the supplier by providing his name and phone!";
+            label27.AutoSize = true;
+            label27.Location = new Point(816, 78);
+            label27.Name = "label27";
+            label27.Size = new Size(58, 20);
+            label27.TabIndex = 16;
+            label27.Text = "label27";
+            // 
+            // loadCustomersBtn
+            // 
+            loadCustomersBtn.Location = new Point(807, 492);
+            loadCustomersBtn.Name = "loadCustomersBtn";
+            loadCustomersBtn.Size = new Size(94, 29);
+            loadCustomersBtn.TabIndex = 15;
+            loadCustomersBtn.Text = "button3";
+            loadCustomersBtn.UseVisualStyleBackColor = true;
+            loadCustomersBtn.Click += loadCustomersBtn_Click;
+            // 
+            // customerDataGrid
+            // 
+            customerDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            customerDataGrid.Location = new Point(571, 101);
+            customerDataGrid.Name = "customerDataGrid";
+            customerDataGrid.RowHeadersWidth = 51;
+            customerDataGrid.Size = new Size(544, 385);
+            customerDataGrid.TabIndex = 14;
+            // 
+            // updateCustomerBtn
+            // 
+            updateCustomerBtn.Location = new Point(301, 453);
+            updateCustomerBtn.Name = "updateCustomerBtn";
+            updateCustomerBtn.Size = new Size(94, 29);
+            updateCustomerBtn.TabIndex = 13;
+            updateCustomerBtn.Text = "Update";
+            updateCustomerBtn.UseVisualStyleBackColor = true;
+            updateCustomerBtn.Click += updateCustomerBtn_Click;
+            // 
+            // addCustomerBtn
+            // 
+            addCustomerBtn.Location = new Point(154, 453);
+            addCustomerBtn.Name = "addCustomerBtn";
+            addCustomerBtn.Size = new Size(94, 29);
+            addCustomerBtn.TabIndex = 12;
+            addCustomerBtn.Text = "Add";
+            addCustomerBtn.UseVisualStyleBackColor = true;
+            addCustomerBtn.Click += addCustomerBtn_Click;
+            // 
+            // customerWebsiteTxt
+            // 
+            customerWebsiteTxt.Location = new Point(194, 370);
+            customerWebsiteTxt.Name = "customerWebsiteTxt";
+            customerWebsiteTxt.Size = new Size(233, 27);
+            customerWebsiteTxt.TabIndex = 11;
+            // 
+            // customerEmailTxt
+            // 
+            customerEmailTxt.Location = new Point(194, 317);
+            customerEmailTxt.Name = "customerEmailTxt";
+            customerEmailTxt.Size = new Size(233, 27);
+            customerEmailTxt.TabIndex = 10;
+            // 
+            // customerMobileTxt
+            // 
+            customerMobileTxt.Location = new Point(194, 264);
+            customerMobileTxt.Name = "customerMobileTxt";
+            customerMobileTxt.Size = new Size(233, 27);
+            customerMobileTxt.TabIndex = 9;
+            // 
+            // customerFaxTxt
+            // 
+            customerFaxTxt.Location = new Point(194, 211);
+            customerFaxTxt.Name = "customerFaxTxt";
+            customerFaxTxt.Size = new Size(233, 27);
+            customerFaxTxt.TabIndex = 8;
+            // 
+            // customerPhoneTxt
+            // 
+            customerPhoneTxt.Location = new Point(194, 158);
+            customerPhoneTxt.Name = "customerPhoneTxt";
+            customerPhoneTxt.Size = new Size(233, 27);
+            customerPhoneTxt.TabIndex = 7;
+            // 
+            // customerNameTxt
+            // 
+            customerNameTxt.Location = new Point(194, 105);
+            customerNameTxt.Name = "customerNameTxt";
+            customerNameTxt.Size = new Size(233, 27);
+            customerNameTxt.TabIndex = 6;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(100, 373);
+            label26.Name = "label26";
+            label26.Size = new Size(65, 20);
+            label26.TabIndex = 5;
+            label26.Text = "Website:";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(116, 320);
+            label25.Name = "label25";
+            label25.Size = new Size(49, 20);
+            label25.TabIndex = 4;
+            label25.Text = "Email:";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(106, 267);
+            label24.Name = "label24";
+            label24.Size = new Size(59, 20);
+            label24.TabIndex = 3;
+            label24.Text = "Mobile:";
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(132, 214);
+            label23.Name = "label23";
+            label23.Size = new Size(33, 20);
+            label23.TabIndex = 2;
+            label23.Text = "Fax:";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(112, 161);
+            label22.Name = "label22";
+            label22.Size = new Size(53, 20);
+            label22.TabIndex = 1;
+            label22.Text = "Phone:";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(113, 108);
+            label21.Name = "label21";
+            label21.Size = new Size(52, 20);
+            label21.TabIndex = 0;
+            label21.Text = "Name:";
             // 
             // Form1
             // 
@@ -610,6 +790,9 @@
             supplierPage.ResumeLayout(false);
             supplierPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)suppliersDataGrid).EndInit();
+            customerPage.ResumeLayout(false);
+            customerPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)customerDataGrid).EndInit();
             ResumeLayout(false);
         }
 
@@ -667,5 +850,22 @@
         private Button loadSuppliersBtn;
         private Label label19;
         private Label label20;
+        private Label label26;
+        private Label label25;
+        private Label label24;
+        private Label label23;
+        private Label label22;
+        private Label label21;
+        private TextBox customerWebsiteTxt;
+        private TextBox customerEmailTxt;
+        private TextBox customerMobileTxt;
+        private TextBox customerFaxTxt;
+        private TextBox customerPhoneTxt;
+        private TextBox customerNameTxt;
+        private DataGridView customerDataGrid;
+        private Button updateCustomerBtn;
+        private Button addCustomerBtn;
+        private Label label27;
+        private Button loadCustomersBtn;
     }
 }

@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "E:\\ITI\\LINQ\\Trading Company\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25C8E7F7-DF71-41BD-B42F-33FCED2F2D54}|Trading Company\\Trading Company.csproj|e:\\iti\\linq\\trading company\\trading company\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{25C8E7F7-DF71-41BD-B42F-33FCED2F2D54}|Trading Company\\Trading Company.csproj|solutionrelative:trading company\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{25C8E7F7-DF71-41BD-B42F-33FCED2F2D54}|Trading Company\\Trading Company.csproj|e:\\iti\\linq\\trading company\\trading company\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25C8E7F7-DF71-41BD-B42F-33FCED2F2D54}|Trading Company\\Trading Company.csproj|solutionrelative:trading company\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25C8E7F7-DF71-41BD-B42F-33FCED2F2D54}|Trading Company\\Trading Company.csproj|e:\\iti\\linq\\trading company\\trading company\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25C8E7F7-DF71-41BD-B42F-33FCED2F2D54}|Trading Company\\Trading Company.csproj|solutionrelative:trading company\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25C8E7F7-DF71-41BD-B42F-33FCED2F2D54}|Trading Company\\Trading Company.csproj|E:\\ITI\\LINQ\\Trading Company\\trading company\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25C8E7F7-DF71-41BD-B42F-33FCED2F2D54}|Trading Company\\Trading Company.csproj|solutionrelative:trading company\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25C8E7F7-DF71-41BD-B42F-33FCED2F2D54}|Trading Company\\Trading Company.csproj|e:\\iti\\linq\\trading company\\trading company\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25C8E7F7-DF71-41BD-B42F-33FCED2F2D54}|Trading Company\\Trading Company.csproj|solutionrelative:trading company\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25C8E7F7-DF71-41BD-B42F-33FCED2F2D54}|Trading Company\\Trading Company.csproj|e:\\iti\\linq\\trading company\\trading company\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,54 +42,51 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Trading Company\\Form1.Designer.cs",
+              "ToolTip": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Form1.Designer.cs",
+              "RelativeToolTip": "Trading Company\\Form1.Designer.cs",
+              "ViewState": "AgIAAIgCAAAAAAAAAADgv5kCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T01:18:27.666Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Customer.cs",
               "DocumentMoniker": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "Trading Company\\Models\\Customer.cs",
               "ToolTip": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Models\\Customer.cs",
               "RelativeToolTip": "Trading Company\\Models\\Customer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T02:06:48.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T02:06:48.991Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Supplier.cs",
-              "DocumentMoniker": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Models\\Supplier.cs",
-              "RelativeDocumentMoniker": "Trading Company\\Models\\Supplier.cs",
-              "ToolTip": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Models\\Supplier.cs",
-              "RelativeToolTip": "Trading Company\\Models\\Supplier.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T02:06:07.602Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Form1.cs",
               "RelativeDocumentMoniker": "Trading Company\\Form1.cs",
               "ToolTip": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Form1.cs",
               "RelativeToolTip": "Trading Company\\Form1.cs",
-              "ViewState": "AgIAAD0BAAAAAAAAAAAYwFEBAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAM8BAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-08T21:53:10.051Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Form1.cs",
               "RelativeDocumentMoniker": "Trading Company\\Form1.cs",
               "ToolTip": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Form1.cs [Design]",
               "RelativeToolTip": "Trading Company\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T02:55:21.54Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-08T02:55:21.54Z"
             }
           ]
         }
