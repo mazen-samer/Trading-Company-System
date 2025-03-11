@@ -1,6 +1,6 @@
 ﻿namespace Trading_Company.Models
 {
-    public class WithdrawalOrder
+    public class CustomerOrder
     {
         public int WithdrawalOrderID { get; set; }
         public int WarehouseID { get; set; }
@@ -12,7 +12,7 @@
         public DateTime OrderDate { get; set; }
 
         // Relationships
-        public ICollection<WithdrawalOrderDetail> WithdrawalOrderDetails { get; set; }
+        public ICollection<CustomerOrderDetail> WithdrawalOrderDetails { get; set; }
     }
 
 }

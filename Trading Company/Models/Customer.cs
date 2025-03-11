@@ -11,7 +11,7 @@
         public string Website { get; set; }
 
         // Relationships
-        public ICollection<WithdrawalOrder> WithdrawalOrders { get; set; }
+        public ICollection<CustomerOrder> WithdrawalOrders { get; set; }
     }
 
 }

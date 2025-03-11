@@ -1,9 +1,9 @@
 ﻿namespace Trading_Company.Models
 {
-    public class WithdrawalOrderDetail
+    public class CustomerOrderDetail
     {
         public int WithdrawalOrderID { get; set; }
-        public WithdrawalOrder WithdrawalOrder { get; set; }
+        public CustomerOrder WithdrawalOrder { get; set; }
 
         public int ItemID { get; set; }
         public Item Item { get; set; }

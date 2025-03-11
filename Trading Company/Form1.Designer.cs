@@ -42,20 +42,11 @@
             label2 = new Label();
             label1 = new Label();
             itemsPage = new TabPage();
-            label12 = new Label();
             addItemBtn = new Button();
             label11 = new Label();
             loadItemsAndWarehouseItemsBtn = new Button();
             warehouseItemsDataGrid = new DataGridView();
             itemsDataGrid = new DataGridView();
-            expirationDatePicker = new DateTimePicker();
-            label10 = new Label();
-            label9 = new Label();
-            productionDatePicker = new DateTimePicker();
-            itemQuantityTxt = new TextBox();
-            label8 = new Label();
-            label7 = new Label();
-            warehouseItemsComboBox = new ComboBox();
             itemMeasurementTxt = new TextBox();
             itemNametxt = new TextBox();
             label6 = new Label();
@@ -97,6 +88,63 @@
             label23 = new Label();
             label22 = new Label();
             label21 = new Label();
+            supplierOrderPage = new TabPage();
+            clearSupplierOrderList = new Button();
+            loadSupplierOrderData = new Button();
+            supplierOrderDetailsDataGridView = new DataGridView();
+            supplierOrdersDataGridView = new DataGridView();
+            supplierOrderItemsListBox = new ListBox();
+            supplierOrderAddBtn = new Button();
+            groupBox1 = new GroupBox();
+            addItemToSupplierOrderBtn = new Button();
+            supplierOrderItemsComboBox = new ComboBox();
+            label28 = new Label();
+            label9 = new Label();
+            label12 = new Label();
+            supplierOrderExpDate = new DateTimePicker();
+            supplierOrderItemQuantityTxt = new TextBox();
+            supplierOrderProdDate = new DateTimePicker();
+            label10 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            supplierOrderSupplierComboBox = new ComboBox();
+            supplierOrderWarehousesComboBox = new ComboBox();
+            customerOrderPage = new TabPage();
+            clearCustomerOrderList = new Button();
+            loadCustomerOrderData = new Button();
+            customerOrderDetailsDataGridView = new DataGridView();
+            customerOrdersDataGridView = new DataGridView();
+            saveCustomerOrderBtn = new Button();
+            groupBox2 = new GroupBox();
+            addItemToCustomerOrderBtn = new Button();
+            customerOrderItemQuantityTxt = new TextBox();
+            customerOrderItemsComboBox = new ComboBox();
+            customerOrderItemsListBox = new ListBox();
+            label32 = new Label();
+            label31 = new Label();
+            customerOrderCustomerComboBox = new ComboBox();
+            customerOrderWarehousesComboBox = new ComboBox();
+            label30 = new Label();
+            label29 = new Label();
+            transferOrderPage = new TabPage();
+            clearTransferOrderList = new Button();
+            loadTransferOrderData = new Button();
+            transferOrderDetailsDataGridView = new DataGridView();
+            transferOrdersDataGridView = new DataGridView();
+            saveTransferOrderBtn = new Button();
+            groupBox3 = new GroupBox();
+            addItemToTransferOrderBtn = new Button();
+            transferOrderItemsListBox = new ListBox();
+            transferOrderItemQuantityTxt = new TextBox();
+            transferOrderSupplierComboBox = new ComboBox();
+            transferOrderItemsComboBox = new ComboBox();
+            label37 = new Label();
+            label36 = new Label();
+            label35 = new Label();
+            transferOrderDestinationWarehouseComboBox = new ComboBox();
+            transferOrderSourceWarehouseComboBox = new ComboBox();
+            label34 = new Label();
+            label33 = new Label();
             tabControl1.SuspendLayout();
             warehousesPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -107,6 +155,18 @@
             ((System.ComponentModel.ISupportInitialize)suppliersDataGrid).BeginInit();
             customerPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)customerDataGrid).BeginInit();
+            supplierOrderPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)supplierOrderDetailsDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)supplierOrdersDataGridView).BeginInit();
+            groupBox1.SuspendLayout();
+            customerOrderPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)customerOrderDetailsDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)customerOrdersDataGridView).BeginInit();
+            groupBox2.SuspendLayout();
+            transferOrderPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)transferOrderDetailsDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)transferOrdersDataGridView).BeginInit();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -116,6 +176,9 @@
             tabControl1.Controls.Add(itemsPage);
             tabControl1.Controls.Add(supplierPage);
             tabControl1.Controls.Add(customerPage);
+            tabControl1.Controls.Add(supplierOrderPage);
+            tabControl1.Controls.Add(customerOrderPage);
+            tabControl1.Controls.Add(transferOrderPage);
             tabControl1.Location = new Point(12, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -241,20 +304,11 @@
             // 
             // itemsPage
             // 
-            itemsPage.Controls.Add(label12);
             itemsPage.Controls.Add(addItemBtn);
             itemsPage.Controls.Add(label11);
             itemsPage.Controls.Add(loadItemsAndWarehouseItemsBtn);
             itemsPage.Controls.Add(warehouseItemsDataGrid);
             itemsPage.Controls.Add(itemsDataGrid);
-            itemsPage.Controls.Add(expirationDatePicker);
-            itemsPage.Controls.Add(label10);
-            itemsPage.Controls.Add(label9);
-            itemsPage.Controls.Add(productionDatePicker);
-            itemsPage.Controls.Add(itemQuantityTxt);
-            itemsPage.Controls.Add(label8);
-            itemsPage.Controls.Add(label7);
-            itemsPage.Controls.Add(warehouseItemsComboBox);
             itemsPage.Controls.Add(itemMeasurementTxt);
             itemsPage.Controls.Add(itemNametxt);
             itemsPage.Controls.Add(label6);
@@ -267,18 +321,9 @@
             itemsPage.Text = "Items";
             itemsPage.UseVisualStyleBackColor = true;
             // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(57, 551);
-            label12.Name = "label12";
-            label12.Size = new Size(603, 20);
-            label12.TabIndex = 17;
-            label12.Text = "* You can update the item's quantity if you entered the same name and measurement unit.";
-            // 
             // addItemBtn
             // 
-            addItemBtn.Location = new Point(249, 507);
+            addItemBtn.Location = new Point(405, 244);
             addItemBtn.Name = "addItemBtn";
             addItemBtn.Size = new Size(94, 29);
             addItemBtn.TabIndex = 16;
@@ -322,72 +367,6 @@
             itemsDataGrid.RowHeadersWidth = 51;
             itemsDataGrid.Size = new Size(497, 188);
             itemsDataGrid.TabIndex = 12;
-            // 
-            // expirationDatePicker
-            // 
-            expirationDatePicker.Location = new Point(249, 443);
-            expirationDatePicker.Name = "expirationDatePicker";
-            expirationDatePicker.Size = new Size(250, 27);
-            expirationDatePicker.TabIndex = 11;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(110, 445);
-            label10.Name = "label10";
-            label10.Size = new Size(115, 20);
-            label10.TabIndex = 10;
-            label10.Text = "Expiration Date:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(105, 380);
-            label9.Name = "label9";
-            label9.Size = new Size(120, 20);
-            label9.TabIndex = 9;
-            label9.Text = "Production Date:";
-            // 
-            // productionDatePicker
-            // 
-            productionDatePicker.Location = new Point(249, 378);
-            productionDatePicker.Name = "productionDatePicker";
-            productionDatePicker.Size = new Size(250, 27);
-            productionDatePicker.TabIndex = 8;
-            // 
-            // itemQuantityTxt
-            // 
-            itemQuantityTxt.Location = new Point(249, 313);
-            itemQuantityTxt.Name = "itemQuantityTxt";
-            itemQuantityTxt.Size = new Size(250, 27);
-            itemQuantityTxt.TabIndex = 7;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(157, 315);
-            label8.Name = "label8";
-            label8.Size = new Size(68, 20);
-            label8.TabIndex = 6;
-            label8.Text = "Quantity:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(96, 250);
-            label7.Name = "label7";
-            label7.Size = new Size(129, 20);
-            label7.TabIndex = 5;
-            label7.Text = "Select Warehouse:";
-            // 
-            // warehouseItemsComboBox
-            // 
-            warehouseItemsComboBox.FormattingEnabled = true;
-            warehouseItemsComboBox.Items.AddRange(new object[] { "ahmed", "mazen" });
-            warehouseItemsComboBox.Location = new Point(249, 247);
-            warehouseItemsComboBox.Name = "warehouseItemsComboBox";
-            warehouseItemsComboBox.Size = new Size(250, 28);
-            warehouseItemsComboBox.TabIndex = 4;
             // 
             // itemMeasurementTxt
             // 
@@ -771,6 +750,562 @@
             label21.TabIndex = 0;
             label21.Text = "Name:";
             // 
+            // supplierOrderPage
+            // 
+            supplierOrderPage.Controls.Add(clearSupplierOrderList);
+            supplierOrderPage.Controls.Add(loadSupplierOrderData);
+            supplierOrderPage.Controls.Add(supplierOrderDetailsDataGridView);
+            supplierOrderPage.Controls.Add(supplierOrdersDataGridView);
+            supplierOrderPage.Controls.Add(supplierOrderItemsListBox);
+            supplierOrderPage.Controls.Add(supplierOrderAddBtn);
+            supplierOrderPage.Controls.Add(groupBox1);
+            supplierOrderPage.Controls.Add(label8);
+            supplierOrderPage.Controls.Add(label7);
+            supplierOrderPage.Controls.Add(supplierOrderSupplierComboBox);
+            supplierOrderPage.Controls.Add(supplierOrderWarehousesComboBox);
+            supplierOrderPage.Location = new Point(4, 29);
+            supplierOrderPage.Name = "supplierOrderPage";
+            supplierOrderPage.Size = new Size(1147, 586);
+            supplierOrderPage.TabIndex = 4;
+            supplierOrderPage.Text = "Supplier Order";
+            supplierOrderPage.UseVisualStyleBackColor = true;
+            // 
+            // clearSupplierOrderList
+            // 
+            clearSupplierOrderList.Location = new Point(536, 481);
+            clearSupplierOrderList.Name = "clearSupplierOrderList";
+            clearSupplierOrderList.Size = new Size(94, 29);
+            clearSupplierOrderList.TabIndex = 18;
+            clearSupplierOrderList.Text = "Clear";
+            clearSupplierOrderList.UseVisualStyleBackColor = true;
+            clearSupplierOrderList.Click += clearSupplierOrderList_Click;
+            // 
+            // loadSupplierOrderData
+            // 
+            loadSupplierOrderData.Location = new Point(844, 493);
+            loadSupplierOrderData.Name = "loadSupplierOrderData";
+            loadSupplierOrderData.Size = new Size(94, 29);
+            loadSupplierOrderData.TabIndex = 17;
+            loadSupplierOrderData.Text = "Load";
+            loadSupplierOrderData.UseVisualStyleBackColor = true;
+            loadSupplierOrderData.Click += loadSupplierOrderData_Click;
+            // 
+            // supplierOrderDetailsDataGridView
+            // 
+            supplierOrderDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            supplierOrderDetailsDataGridView.Location = new Point(663, 299);
+            supplierOrderDetailsDataGridView.Name = "supplierOrderDetailsDataGridView";
+            supplierOrderDetailsDataGridView.RowHeadersWidth = 51;
+            supplierOrderDetailsDataGridView.Size = new Size(450, 188);
+            supplierOrderDetailsDataGridView.TabIndex = 16;
+            // 
+            // supplierOrdersDataGridView
+            // 
+            supplierOrdersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            supplierOrdersDataGridView.Location = new Point(663, 58);
+            supplierOrdersDataGridView.Name = "supplierOrdersDataGridView";
+            supplierOrdersDataGridView.RowHeadersWidth = 51;
+            supplierOrdersDataGridView.Size = new Size(450, 188);
+            supplierOrdersDataGridView.TabIndex = 15;
+            // 
+            // supplierOrderItemsListBox
+            // 
+            supplierOrderItemsListBox.FormattingEnabled = true;
+            supplierOrderItemsListBox.Location = new Point(484, 211);
+            supplierOrderItemsListBox.Name = "supplierOrderItemsListBox";
+            supplierOrderItemsListBox.Size = new Size(146, 264);
+            supplierOrderItemsListBox.TabIndex = 14;
+            // 
+            // supplierOrderAddBtn
+            // 
+            supplierOrderAddBtn.Location = new Point(358, 481);
+            supplierOrderAddBtn.Name = "supplierOrderAddBtn";
+            supplierOrderAddBtn.Size = new Size(94, 29);
+            supplierOrderAddBtn.TabIndex = 13;
+            supplierOrderAddBtn.Text = "Add Order";
+            supplierOrderAddBtn.UseVisualStyleBackColor = true;
+            supplierOrderAddBtn.Click += supplierOrderAddBtn_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(addItemToSupplierOrderBtn);
+            groupBox1.Controls.Add(supplierOrderItemsComboBox);
+            groupBox1.Controls.Add(label28);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Controls.Add(label12);
+            groupBox1.Controls.Add(supplierOrderExpDate);
+            groupBox1.Controls.Add(supplierOrderItemQuantityTxt);
+            groupBox1.Controls.Add(supplierOrderProdDate);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Location = new Point(30, 202);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(448, 273);
+            groupBox1.TabIndex = 12;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Add Items";
+            // 
+            // addItemToSupplierOrderBtn
+            // 
+            addItemToSupplierOrderBtn.Location = new Point(328, 226);
+            addItemToSupplierOrderBtn.Name = "addItemToSupplierOrderBtn";
+            addItemToSupplierOrderBtn.Size = new Size(94, 29);
+            addItemToSupplierOrderBtn.TabIndex = 12;
+            addItemToSupplierOrderBtn.Text = "Add";
+            addItemToSupplierOrderBtn.UseVisualStyleBackColor = true;
+            addItemToSupplierOrderBtn.Click += addItemToSupplierOrderBtn_Click;
+            // 
+            // supplierOrderItemsComboBox
+            // 
+            supplierOrderItemsComboBox.FormattingEnabled = true;
+            supplierOrderItemsComboBox.Location = new Point(172, 43);
+            supplierOrderItemsComboBox.Name = "supplierOrderItemsComboBox";
+            supplierOrderItemsComboBox.Size = new Size(151, 28);
+            supplierOrderItemsComboBox.TabIndex = 1;
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Location = new Point(35, 187);
+            label28.Name = "label28";
+            label28.Size = new Size(113, 20);
+            label28.TabIndex = 11;
+            label28.Text = "Expiration date:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(35, 46);
+            label9.Name = "label9";
+            label9.Size = new Size(42, 20);
+            label9.TabIndex = 5;
+            label9.Text = "Item:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(35, 140);
+            label12.Name = "label12";
+            label12.Size = new Size(118, 20);
+            label12.TabIndex = 10;
+            label12.Text = "Production date:";
+            // 
+            // supplierOrderExpDate
+            // 
+            supplierOrderExpDate.Location = new Point(172, 182);
+            supplierOrderExpDate.Name = "supplierOrderExpDate";
+            supplierOrderExpDate.Size = new Size(250, 27);
+            supplierOrderExpDate.TabIndex = 9;
+            // 
+            // supplierOrderItemQuantityTxt
+            // 
+            supplierOrderItemQuantityTxt.Location = new Point(172, 90);
+            supplierOrderItemQuantityTxt.Name = "supplierOrderItemQuantityTxt";
+            supplierOrderItemQuantityTxt.Size = new Size(151, 27);
+            supplierOrderItemQuantityTxt.TabIndex = 6;
+            // 
+            // supplierOrderProdDate
+            // 
+            supplierOrderProdDate.Location = new Point(172, 135);
+            supplierOrderProdDate.Name = "supplierOrderProdDate";
+            supplierOrderProdDate.Size = new Size(250, 27);
+            supplierOrderProdDate.TabIndex = 8;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(35, 93);
+            label10.Name = "label10";
+            label10.Size = new Size(68, 20);
+            label10.TabIndex = 7;
+            label10.Text = "Quantity:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(22, 80);
+            label8.Name = "label8";
+            label8.Size = new Size(85, 20);
+            label8.TabIndex = 4;
+            label8.Text = "Warehouse:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(40, 136);
+            label7.Name = "label7";
+            label7.Size = new Size(67, 20);
+            label7.TabIndex = 3;
+            label7.Text = "Supplier:";
+            // 
+            // supplierOrderSupplierComboBox
+            // 
+            supplierOrderSupplierComboBox.FormattingEnabled = true;
+            supplierOrderSupplierComboBox.Location = new Point(202, 133);
+            supplierOrderSupplierComboBox.Name = "supplierOrderSupplierComboBox";
+            supplierOrderSupplierComboBox.Size = new Size(151, 28);
+            supplierOrderSupplierComboBox.TabIndex = 2;
+            // 
+            // supplierOrderWarehousesComboBox
+            // 
+            supplierOrderWarehousesComboBox.FormattingEnabled = true;
+            supplierOrderWarehousesComboBox.Location = new Point(202, 77);
+            supplierOrderWarehousesComboBox.Name = "supplierOrderWarehousesComboBox";
+            supplierOrderWarehousesComboBox.Size = new Size(151, 28);
+            supplierOrderWarehousesComboBox.TabIndex = 0;
+            // 
+            // customerOrderPage
+            // 
+            customerOrderPage.Controls.Add(clearCustomerOrderList);
+            customerOrderPage.Controls.Add(loadCustomerOrderData);
+            customerOrderPage.Controls.Add(customerOrderDetailsDataGridView);
+            customerOrderPage.Controls.Add(customerOrdersDataGridView);
+            customerOrderPage.Controls.Add(saveCustomerOrderBtn);
+            customerOrderPage.Controls.Add(groupBox2);
+            customerOrderPage.Controls.Add(customerOrderCustomerComboBox);
+            customerOrderPage.Controls.Add(customerOrderWarehousesComboBox);
+            customerOrderPage.Controls.Add(label30);
+            customerOrderPage.Controls.Add(label29);
+            customerOrderPage.Location = new Point(4, 29);
+            customerOrderPage.Name = "customerOrderPage";
+            customerOrderPage.Size = new Size(1147, 586);
+            customerOrderPage.TabIndex = 5;
+            customerOrderPage.Text = "Customer Order";
+            customerOrderPage.UseVisualStyleBackColor = true;
+            // 
+            // clearCustomerOrderList
+            // 
+            clearCustomerOrderList.Location = new Point(509, 487);
+            clearCustomerOrderList.Name = "clearCustomerOrderList";
+            clearCustomerOrderList.Size = new Size(94, 29);
+            clearCustomerOrderList.TabIndex = 9;
+            clearCustomerOrderList.Text = "Clear";
+            clearCustomerOrderList.UseVisualStyleBackColor = true;
+            clearCustomerOrderList.Click += clearCustomerOrderList_Click;
+            // 
+            // loadCustomerOrderData
+            // 
+            loadCustomerOrderData.Location = new Point(816, 506);
+            loadCustomerOrderData.Name = "loadCustomerOrderData";
+            loadCustomerOrderData.Size = new Size(94, 29);
+            loadCustomerOrderData.TabIndex = 8;
+            loadCustomerOrderData.Text = "Load";
+            loadCustomerOrderData.UseVisualStyleBackColor = true;
+            loadCustomerOrderData.Click += loadCustomerOrderData_Click;
+            // 
+            // customerOrderDetailsDataGridView
+            // 
+            customerOrderDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            customerOrderDetailsDataGridView.Location = new Point(657, 312);
+            customerOrderDetailsDataGridView.Name = "customerOrderDetailsDataGridView";
+            customerOrderDetailsDataGridView.RowHeadersWidth = 51;
+            customerOrderDetailsDataGridView.Size = new Size(419, 188);
+            customerOrderDetailsDataGridView.TabIndex = 7;
+            // 
+            // customerOrdersDataGridView
+            // 
+            customerOrdersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            customerOrdersDataGridView.Location = new Point(657, 82);
+            customerOrdersDataGridView.Name = "customerOrdersDataGridView";
+            customerOrdersDataGridView.RowHeadersWidth = 51;
+            customerOrdersDataGridView.Size = new Size(419, 188);
+            customerOrdersDataGridView.TabIndex = 6;
+            // 
+            // saveCustomerOrderBtn
+            // 
+            saveCustomerOrderBtn.Location = new Point(248, 487);
+            saveCustomerOrderBtn.Name = "saveCustomerOrderBtn";
+            saveCustomerOrderBtn.Size = new Size(94, 29);
+            saveCustomerOrderBtn.TabIndex = 5;
+            saveCustomerOrderBtn.Text = "Add Order";
+            saveCustomerOrderBtn.UseVisualStyleBackColor = true;
+            saveCustomerOrderBtn.Click += saveCustomerOrderBtn_Click;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(addItemToCustomerOrderBtn);
+            groupBox2.Controls.Add(customerOrderItemQuantityTxt);
+            groupBox2.Controls.Add(customerOrderItemsComboBox);
+            groupBox2.Controls.Add(customerOrderItemsListBox);
+            groupBox2.Controls.Add(label32);
+            groupBox2.Controls.Add(label31);
+            groupBox2.Location = new Point(82, 233);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(527, 248);
+            groupBox2.TabIndex = 4;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Add Items";
+            // 
+            // addItemToCustomerOrderBtn
+            // 
+            addItemToCustomerOrderBtn.Location = new Point(166, 173);
+            addItemToCustomerOrderBtn.Name = "addItemToCustomerOrderBtn";
+            addItemToCustomerOrderBtn.Size = new Size(94, 29);
+            addItemToCustomerOrderBtn.TabIndex = 5;
+            addItemToCustomerOrderBtn.Text = "Add";
+            addItemToCustomerOrderBtn.UseVisualStyleBackColor = true;
+            addItemToCustomerOrderBtn.Click += addItemToCustomerOrderBtn_Click;
+            // 
+            // customerOrderItemQuantityTxt
+            // 
+            customerOrderItemQuantityTxt.Location = new Point(135, 93);
+            customerOrderItemQuantityTxt.Name = "customerOrderItemQuantityTxt";
+            customerOrderItemQuantityTxt.Size = new Size(151, 27);
+            customerOrderItemQuantityTxt.TabIndex = 4;
+            // 
+            // customerOrderItemsComboBox
+            // 
+            customerOrderItemsComboBox.FormattingEnabled = true;
+            customerOrderItemsComboBox.Location = new Point(135, 44);
+            customerOrderItemsComboBox.Name = "customerOrderItemsComboBox";
+            customerOrderItemsComboBox.Size = new Size(151, 28);
+            customerOrderItemsComboBox.TabIndex = 3;
+            // 
+            // customerOrderItemsListBox
+            // 
+            customerOrderItemsListBox.FormattingEnabled = true;
+            customerOrderItemsListBox.Location = new Point(371, 16);
+            customerOrderItemsListBox.Name = "customerOrderItemsListBox";
+            customerOrderItemsListBox.Size = new Size(150, 224);
+            customerOrderItemsListBox.TabIndex = 2;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Location = new Point(27, 93);
+            label32.Name = "label32";
+            label32.Size = new Size(68, 20);
+            label32.TabIndex = 1;
+            label32.Text = "Quantity:";
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Location = new Point(53, 45);
+            label31.Name = "label31";
+            label31.Size = new Size(42, 20);
+            label31.TabIndex = 0;
+            label31.Text = "Item:";
+            // 
+            // customerOrderCustomerComboBox
+            // 
+            customerOrderCustomerComboBox.FormattingEnabled = true;
+            customerOrderCustomerComboBox.Location = new Point(209, 123);
+            customerOrderCustomerComboBox.Name = "customerOrderCustomerComboBox";
+            customerOrderCustomerComboBox.Size = new Size(151, 28);
+            customerOrderCustomerComboBox.TabIndex = 3;
+            // 
+            // customerOrderWarehousesComboBox
+            // 
+            customerOrderWarehousesComboBox.FormattingEnabled = true;
+            customerOrderWarehousesComboBox.Location = new Point(209, 70);
+            customerOrderWarehousesComboBox.Name = "customerOrderWarehousesComboBox";
+            customerOrderWarehousesComboBox.Size = new Size(151, 28);
+            customerOrderWarehousesComboBox.TabIndex = 2;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Location = new Point(92, 126);
+            label30.Name = "label30";
+            label30.Size = new Size(75, 20);
+            label30.TabIndex = 1;
+            label30.Text = "Customer:";
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(82, 73);
+            label29.Name = "label29";
+            label29.Size = new Size(85, 20);
+            label29.TabIndex = 0;
+            label29.Text = "Warehouse:";
+            // 
+            // transferOrderPage
+            // 
+            transferOrderPage.Controls.Add(clearTransferOrderList);
+            transferOrderPage.Controls.Add(loadTransferOrderData);
+            transferOrderPage.Controls.Add(transferOrderDetailsDataGridView);
+            transferOrderPage.Controls.Add(transferOrdersDataGridView);
+            transferOrderPage.Controls.Add(saveTransferOrderBtn);
+            transferOrderPage.Controls.Add(groupBox3);
+            transferOrderPage.Controls.Add(transferOrderDestinationWarehouseComboBox);
+            transferOrderPage.Controls.Add(transferOrderSourceWarehouseComboBox);
+            transferOrderPage.Controls.Add(label34);
+            transferOrderPage.Controls.Add(label33);
+            transferOrderPage.Location = new Point(4, 29);
+            transferOrderPage.Name = "transferOrderPage";
+            transferOrderPage.Size = new Size(1147, 586);
+            transferOrderPage.TabIndex = 6;
+            transferOrderPage.Text = "Transfer Order";
+            transferOrderPage.UseVisualStyleBackColor = true;
+            // 
+            // clearTransferOrderList
+            // 
+            clearTransferOrderList.Location = new Point(466, 521);
+            clearTransferOrderList.Name = "clearTransferOrderList";
+            clearTransferOrderList.Size = new Size(94, 29);
+            clearTransferOrderList.TabIndex = 9;
+            clearTransferOrderList.Text = "Clear";
+            clearTransferOrderList.UseVisualStyleBackColor = true;
+            clearTransferOrderList.Click += clearTransferOrderList_Click;
+            // 
+            // loadTransferOrderData
+            // 
+            loadTransferOrderData.Location = new Point(838, 489);
+            loadTransferOrderData.Name = "loadTransferOrderData";
+            loadTransferOrderData.Size = new Size(94, 29);
+            loadTransferOrderData.TabIndex = 8;
+            loadTransferOrderData.Text = "Load";
+            loadTransferOrderData.UseVisualStyleBackColor = true;
+            loadTransferOrderData.Click += loadTransferOrderData_Click;
+            // 
+            // transferOrderDetailsDataGridView
+            // 
+            transferOrderDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            transferOrderDetailsDataGridView.Location = new Point(656, 295);
+            transferOrderDetailsDataGridView.Name = "transferOrderDetailsDataGridView";
+            transferOrderDetailsDataGridView.RowHeadersWidth = 51;
+            transferOrderDetailsDataGridView.Size = new Size(443, 188);
+            transferOrderDetailsDataGridView.TabIndex = 7;
+            // 
+            // transferOrdersDataGridView
+            // 
+            transferOrdersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            transferOrdersDataGridView.Location = new Point(656, 62);
+            transferOrdersDataGridView.Name = "transferOrdersDataGridView";
+            transferOrdersDataGridView.RowHeadersWidth = 51;
+            transferOrdersDataGridView.Size = new Size(443, 188);
+            transferOrdersDataGridView.TabIndex = 6;
+            // 
+            // saveTransferOrderBtn
+            // 
+            saveTransferOrderBtn.Location = new Point(227, 521);
+            saveTransferOrderBtn.Name = "saveTransferOrderBtn";
+            saveTransferOrderBtn.Size = new Size(94, 29);
+            saveTransferOrderBtn.TabIndex = 5;
+            saveTransferOrderBtn.Text = "Add Order";
+            saveTransferOrderBtn.UseVisualStyleBackColor = true;
+            saveTransferOrderBtn.Click += saveTransferOrderBtn_Click;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(addItemToTransferOrderBtn);
+            groupBox3.Controls.Add(transferOrderItemsListBox);
+            groupBox3.Controls.Add(transferOrderItemQuantityTxt);
+            groupBox3.Controls.Add(transferOrderSupplierComboBox);
+            groupBox3.Controls.Add(transferOrderItemsComboBox);
+            groupBox3.Controls.Add(label37);
+            groupBox3.Controls.Add(label36);
+            groupBox3.Controls.Add(label35);
+            groupBox3.Location = new Point(53, 267);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(513, 248);
+            groupBox3.TabIndex = 4;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "groupBox3";
+            // 
+            // addItemToTransferOrderBtn
+            // 
+            addItemToTransferOrderBtn.Location = new Point(174, 187);
+            addItemToTransferOrderBtn.Name = "addItemToTransferOrderBtn";
+            addItemToTransferOrderBtn.Size = new Size(94, 29);
+            addItemToTransferOrderBtn.TabIndex = 7;
+            addItemToTransferOrderBtn.Text = "Add";
+            addItemToTransferOrderBtn.UseVisualStyleBackColor = true;
+            addItemToTransferOrderBtn.Click += addItemToTransferOrderBtn_Click;
+            // 
+            // transferOrderItemsListBox
+            // 
+            transferOrderItemsListBox.FormattingEnabled = true;
+            transferOrderItemsListBox.Location = new Point(339, 16);
+            transferOrderItemsListBox.Name = "transferOrderItemsListBox";
+            transferOrderItemsListBox.Size = new Size(168, 224);
+            transferOrderItemsListBox.TabIndex = 6;
+            // 
+            // transferOrderItemQuantityTxt
+            // 
+            transferOrderItemQuantityTxt.Location = new Point(117, 82);
+            transferOrderItemQuantityTxt.Name = "transferOrderItemQuantityTxt";
+            transferOrderItemQuantityTxt.Size = new Size(151, 27);
+            transferOrderItemQuantityTxt.TabIndex = 5;
+            // 
+            // transferOrderSupplierComboBox
+            // 
+            transferOrderSupplierComboBox.FormattingEnabled = true;
+            transferOrderSupplierComboBox.Location = new Point(117, 134);
+            transferOrderSupplierComboBox.Name = "transferOrderSupplierComboBox";
+            transferOrderSupplierComboBox.Size = new Size(151, 28);
+            transferOrderSupplierComboBox.TabIndex = 4;
+            // 
+            // transferOrderItemsComboBox
+            // 
+            transferOrderItemsComboBox.FormattingEnabled = true;
+            transferOrderItemsComboBox.Location = new Point(117, 31);
+            transferOrderItemsComboBox.Name = "transferOrderItemsComboBox";
+            transferOrderItemsComboBox.Size = new Size(151, 28);
+            transferOrderItemsComboBox.TabIndex = 3;
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Location = new Point(29, 137);
+            label37.Name = "label37";
+            label37.Size = new Size(67, 20);
+            label37.TabIndex = 2;
+            label37.Text = "Supplier:";
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Location = new Point(28, 85);
+            label36.Name = "label36";
+            label36.Size = new Size(68, 20);
+            label36.TabIndex = 1;
+            label36.Text = "Quantity:";
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Location = new Point(54, 34);
+            label35.Name = "label35";
+            label35.Size = new Size(42, 20);
+            label35.TabIndex = 0;
+            label35.Text = "Item:";
+            // 
+            // transferOrderDestinationWarehouseComboBox
+            // 
+            transferOrderDestinationWarehouseComboBox.FormattingEnabled = true;
+            transferOrderDestinationWarehouseComboBox.Location = new Point(252, 112);
+            transferOrderDestinationWarehouseComboBox.Name = "transferOrderDestinationWarehouseComboBox";
+            transferOrderDestinationWarehouseComboBox.Size = new Size(151, 28);
+            transferOrderDestinationWarehouseComboBox.TabIndex = 3;
+            // 
+            // transferOrderSourceWarehouseComboBox
+            // 
+            transferOrderSourceWarehouseComboBox.FormattingEnabled = true;
+            transferOrderSourceWarehouseComboBox.Location = new Point(252, 43);
+            transferOrderSourceWarehouseComboBox.Name = "transferOrderSourceWarehouseComboBox";
+            transferOrderSourceWarehouseComboBox.Size = new Size(151, 28);
+            transferOrderSourceWarehouseComboBox.TabIndex = 2;
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Location = new Point(53, 115);
+            label34.Name = "label34";
+            label34.Size = new Size(165, 20);
+            label34.TabIndex = 1;
+            label34.Text = "Destination Warehouse:";
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Location = new Point(84, 46);
+            label33.Name = "label33";
+            label33.Size = new Size(134, 20);
+            label33.TabIndex = 0;
+            label33.Text = "Source Warehouse:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -793,6 +1328,24 @@
             customerPage.ResumeLayout(false);
             customerPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)customerDataGrid).EndInit();
+            supplierOrderPage.ResumeLayout(false);
+            supplierOrderPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)supplierOrderDetailsDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)supplierOrdersDataGridView).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            customerOrderPage.ResumeLayout(false);
+            customerOrderPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)customerOrderDetailsDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)customerOrdersDataGridView).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            transferOrderPage.ResumeLayout(false);
+            transferOrderPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)transferOrderDetailsDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)transferOrdersDataGridView).EndInit();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -816,22 +1369,13 @@
         private Label label4;
         private Label label6;
         private Label label5;
-        private ComboBox warehouseItemsComboBox;
         private TextBox itemMeasurementTxt;
         private TextBox itemNametxt;
-        private Label label7;
-        private DateTimePicker expirationDatePicker;
-        private Label label10;
-        private Label label9;
-        private DateTimePicker productionDatePicker;
-        private TextBox itemQuantityTxt;
-        private Label label8;
         private DataGridView warehouseItemsDataGrid;
         private DataGridView itemsDataGrid;
         private Label label11;
         private Button loadItemsAndWarehouseItemsBtn;
         private Button addItemBtn;
-        private Label label12;
         private Label label13;
         private Label label18;
         private Label label17;
@@ -867,5 +1411,62 @@
         private Button addCustomerBtn;
         private Label label27;
         private Button loadCustomersBtn;
+        private TabPage supplierOrderPage;
+        private ComboBox supplierOrderSupplierComboBox;
+        private ComboBox supplierOrderItemsComboBox;
+        private ComboBox supplierOrderWarehousesComboBox;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Label label28;
+        private Label label12;
+        private DateTimePicker supplierOrderExpDate;
+        private DateTimePicker supplierOrderProdDate;
+        private Label label10;
+        private TextBox supplierOrderItemQuantityTxt;
+        private GroupBox groupBox1;
+        private Button addItemToSupplierOrderBtn;
+        private ListBox supplierOrderItemsListBox;
+        private Button supplierOrderAddBtn;
+        private DataGridView supplierOrderDetailsDataGridView;
+        private DataGridView supplierOrdersDataGridView;
+        private Button loadSupplierOrderData;
+        private TabPage customerOrderPage;
+        private TabPage transferOrderPage;
+        private ComboBox customerOrderCustomerComboBox;
+        private ComboBox customerOrderWarehousesComboBox;
+        private Label label30;
+        private Label label29;
+        private GroupBox groupBox2;
+        private Label label32;
+        private Label label31;
+        private Button saveCustomerOrderBtn;
+        private Button addItemToCustomerOrderBtn;
+        private TextBox customerOrderItemQuantityTxt;
+        private ComboBox customerOrderItemsComboBox;
+        private ListBox customerOrderItemsListBox;
+        private Button loadCustomerOrderData;
+        private DataGridView customerOrderDetailsDataGridView;
+        private DataGridView customerOrdersDataGridView;
+        private GroupBox groupBox3;
+        private Label label37;
+        private Label label36;
+        private Label label35;
+        private ComboBox transferOrderDestinationWarehouseComboBox;
+        private ComboBox transferOrderSourceWarehouseComboBox;
+        private Label label34;
+        private Label label33;
+        private TextBox transferOrderItemQuantityTxt;
+        private ComboBox transferOrderSupplierComboBox;
+        private ComboBox transferOrderItemsComboBox;
+        private Button saveTransferOrderBtn;
+        private Button addItemToTransferOrderBtn;
+        private ListBox transferOrderItemsListBox;
+        private DataGridView transferOrderDetailsDataGridView;
+        private DataGridView transferOrdersDataGridView;
+        private Button loadTransferOrderData;
+        private Button clearSupplierOrderList;
+        private Button clearCustomerOrderList;
+        private Button clearTransferOrderList;
     }
 }
