@@ -17,14 +17,14 @@ namespace Trading_Company
                 context.Database.EnsureCreated();
             }
             LoadSupplierOrderWarehousesIntoComboBox();
-            LoadSupplierOrderSupplierIntoComboBox();
-            LoadSupplierOrderItemsIntoComboBox();
             LoadCustomerOrderWarehouseComboBox();
+            LoadTransferOrderWarehousesIntoComboBox();
+            LoadSupplierOrderSupplierIntoComboBox();
+            LoadTransferOrderSuppliersIntoComboBox();
             LoadCustomerOrderCustomersComboBox();
+            LoadSupplierOrderItemsIntoComboBox();
             LoadCustomerOrderItemsComboBox();
             LoadTransferOrderItemsIntoComboBox();
-            LoadTransferOrderSuppliersIntoComboBox();
-            LoadTransferOrderWarehousesIntoComboBox();
         }
 
         #endregion
@@ -64,6 +64,9 @@ namespace Trading_Company
                     context.SaveChanges();
                     MessageBox.Show("Warehouse added successfully!");
                     LoadSupplierOrderWarehousesIntoComboBox();
+                    LoadCustomerOrderWarehouseComboBox();
+                    LoadTransferOrderWarehousesIntoComboBox();
+                    LoadWarehouses();
                 }
             }
             catch (Exception ex)
@@ -179,6 +182,9 @@ namespace Trading_Company
                     context.SaveChanges();
                     MessageBox.Show("Item added successfully!");
                     LoadSupplierOrderItemsIntoComboBox();
+                    LoadSupplierOrderItemsIntoComboBox();
+                    LoadCustomerOrderItemsComboBox();
+                    LoadTransferOrderItemsIntoComboBox();
                     LoadItemsAndWarehouseItems();
 
                 }
@@ -265,6 +271,7 @@ namespace Trading_Company
                     MessageBox.Show("Supplier added successfully!");
                     LoadSuppliers();
                     LoadSupplierOrderSupplierIntoComboBox();
+                    LoadTransferOrderSuppliersIntoComboBox();
                 }
                 else
                 {
@@ -393,6 +400,7 @@ namespace Trading_Company
                 context.SaveChanges();
                 MessageBox.Show("Customer is added successfully");
                 LoadCustomers();
+                LoadCustomerOrderCustomersComboBox();
             }
             ClearCustomerTabFields();
         }
@@ -1011,15 +1019,17 @@ namespace Trading_Company
                     .Select(w => new { w.WarehouseID, w.Name })
                     .ToList();
 
-                transferOrderSourceWarehouseComboBox.DataSource = warehouses;
+                transferOrderSourceWarehouseComboBox.DataSource = warehouses.ToList();
+                transferOrderDestinationWarehouseComboBox.DataSource = warehouses.ToList();
+
                 transferOrderSourceWarehouseComboBox.DisplayMember = "Name";
                 transferOrderSourceWarehouseComboBox.ValueMember = "WarehouseID";
 
-                transferOrderDestinationWarehouseComboBox.DataSource = warehouses;
                 transferOrderDestinationWarehouseComboBox.DisplayMember = "Name";
                 transferOrderDestinationWarehouseComboBox.ValueMember = "WarehouseID";
             }
         }
+
 
         void LoadTransferOrderSuppliersIntoComboBox()
         {
@@ -1055,5 +1065,94 @@ namespace Trading_Company
         }
         #endregion
 
+        #region Reports
+
+        private void currentInventory_Click(object sender, EventArgs e)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var stockReport = context.WarehouseItems
+                .Select(wi => new
+                {
+                    Warehouse = wi.Warehouse.Name,
+                    Item = wi.Item.Name,
+                    Quantity = wi.Quantity
+                })
+                .ToList();
+                reportsDataGrid.DataSource = stockReport;
+            }
+        }
+
+        private void supplierOrder_Click(object sender, EventArgs e)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var supplierOrderReport = context.SupplyOrders
+                .Select(so => new
+                {
+                    OrderID = so.SupplyOrderID,
+                    Supplier = so.Supplier.Name,
+                    Warehouse = so.Warehouse.Name,
+                    OrderDate = so.OrderDate
+                })
+                .ToList();
+                reportsDataGrid.DataSource = supplierOrderReport;
+
+            }
+        }
+
+        private void customerOrder_Click(object sender, EventArgs e)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var customerOrderReport = context.CustomerOrders
+                .Select(co => new
+                {
+                    OrderID = co.CustomerOrderID,
+                    Customer = co.Customer.Name,
+                    Warehouse = co.Warehouse.Name,
+                    OrderDate = co.OrderDate
+                })
+                .ToList();
+                reportsDataGrid.DataSource = customerOrderReport;
+            }
+        }
+
+        private void transferOrder_Click(object sender, EventArgs e)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var transferReport = context.TransferOrders
+                .Select(to => new
+                {
+                    OrderID = to.TransferOrderID,
+                    SourceWarehouse = to.SourceWarehouse.Name,
+                    DestinationWarehouse = to.DestinationWarehouse.Name,
+                    OrderDate = to.OrderDate
+                })
+                .ToList();
+                reportsDataGrid.DataSource = transferReport;
+
+            }
+        }
+
+        private void expirationReport_Click(object sender, EventArgs e)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var expiringItemsReport = context.SupplyOrderDetails
+                .Where(d => d.ExpirationDate <= DateTime.Now.AddDays(30))  // Items expiring in 30 days
+                .Select(d => new
+                {
+                    Item = d.Item.Name,
+                    Warehouse = d.SupplyOrder.Warehouse.Name,
+                    ExpirationDate = d.ExpirationDate
+                })
+                .ToList();
+                reportsDataGrid.DataSource = expiringItemsReport;
+
+            }
+        }
+        #endregion
     }
 }

@@ -145,6 +145,17 @@
             transferOrderSourceWarehouseComboBox = new ComboBox();
             label34 = new Label();
             label33 = new Label();
+            reportPage = new TabPage();
+            reportsDataGrid = new DataGridView();
+            expirationReport = new Button();
+            transferOrder = new Button();
+            customerOrder = new Button();
+            supplierOrder = new Button();
+            currentInventory = new Button();
+            label38 = new Label();
+            label39 = new Label();
+            label40 = new Label();
+            label41 = new Label();
             tabControl1.SuspendLayout();
             warehousesPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -167,6 +178,8 @@
             ((System.ComponentModel.ISupportInitialize)transferOrderDetailsDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)transferOrdersDataGridView).BeginInit();
             groupBox3.SuspendLayout();
+            reportPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)reportsDataGrid).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -179,6 +192,7 @@
             tabControl1.Controls.Add(supplierOrderPage);
             tabControl1.Controls.Add(customerOrderPage);
             tabControl1.Controls.Add(transferOrderPage);
+            tabControl1.Controls.Add(reportPage);
             tabControl1.Location = new Point(12, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -489,42 +503,42 @@
             supplierNameTxt.Location = new Point(183, 107);
             supplierNameTxt.Name = "supplierNameTxt";
             supplierNameTxt.Size = new Size(193, 27);
-            supplierNameTxt.TabIndex = 11;
+            supplierNameTxt.TabIndex = 6;
             // 
             // supplierPhoneTxt
             // 
             supplierPhoneTxt.Location = new Point(183, 160);
             supplierPhoneTxt.Name = "supplierPhoneTxt";
             supplierPhoneTxt.Size = new Size(193, 27);
-            supplierPhoneTxt.TabIndex = 10;
+            supplierPhoneTxt.TabIndex = 7;
             // 
             // supplierFaxTxt
             // 
             supplierFaxTxt.Location = new Point(183, 213);
             supplierFaxTxt.Name = "supplierFaxTxt";
             supplierFaxTxt.Size = new Size(193, 27);
-            supplierFaxTxt.TabIndex = 9;
+            supplierFaxTxt.TabIndex = 8;
             // 
             // supplierMobileTxt
             // 
             supplierMobileTxt.Location = new Point(183, 266);
             supplierMobileTxt.Name = "supplierMobileTxt";
             supplierMobileTxt.Size = new Size(193, 27);
-            supplierMobileTxt.TabIndex = 8;
+            supplierMobileTxt.TabIndex = 9;
             // 
             // supplierEmailTxt
             // 
             supplierEmailTxt.Location = new Point(183, 319);
             supplierEmailTxt.Name = "supplierEmailTxt";
             supplierEmailTxt.Size = new Size(193, 27);
-            supplierEmailTxt.TabIndex = 7;
+            supplierEmailTxt.TabIndex = 10;
             // 
             // supplierWebsiteTxt
             // 
             supplierWebsiteTxt.Location = new Point(183, 372);
             supplierWebsiteTxt.Name = "supplierWebsiteTxt";
             supplierWebsiteTxt.Size = new Size(193, 27);
-            supplierWebsiteTxt.TabIndex = 6;
+            supplierWebsiteTxt.TabIndex = 11;
             // 
             // label18
             // 
@@ -609,19 +623,19 @@
             // label27
             // 
             label27.AutoSize = true;
-            label27.Location = new Point(816, 78);
+            label27.Location = new Point(778, 78);
             label27.Name = "label27";
-            label27.Size = new Size(58, 20);
+            label27.Size = new Size(130, 20);
             label27.TabIndex = 16;
-            label27.Text = "label27";
+            label27.Text = "Current Customers";
             // 
             // loadCustomersBtn
             // 
-            loadCustomersBtn.Location = new Point(807, 492);
+            loadCustomersBtn.Location = new Point(796, 492);
             loadCustomersBtn.Name = "loadCustomersBtn";
             loadCustomersBtn.Size = new Size(94, 29);
             loadCustomersBtn.TabIndex = 15;
-            loadCustomersBtn.Text = "button3";
+            loadCustomersBtn.Text = "Load";
             loadCustomersBtn.UseVisualStyleBackColor = true;
             loadCustomersBtn.Click += loadCustomersBtn_Click;
             // 
@@ -752,6 +766,7 @@
             // 
             // supplierOrderPage
             // 
+            supplierOrderPage.Controls.Add(label38);
             supplierOrderPage.Controls.Add(clearSupplierOrderList);
             supplierOrderPage.Controls.Add(loadSupplierOrderData);
             supplierOrderPage.Controls.Add(supplierOrderDetailsDataGridView);
@@ -793,7 +808,7 @@
             // supplierOrderDetailsDataGridView
             // 
             supplierOrderDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            supplierOrderDetailsDataGridView.Location = new Point(663, 299);
+            supplierOrderDetailsDataGridView.Location = new Point(666, 292);
             supplierOrderDetailsDataGridView.Name = "supplierOrderDetailsDataGridView";
             supplierOrderDetailsDataGridView.RowHeadersWidth = 51;
             supplierOrderDetailsDataGridView.Size = new Size(450, 188);
@@ -802,7 +817,7 @@
             // supplierOrdersDataGridView
             // 
             supplierOrdersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            supplierOrdersDataGridView.Location = new Point(663, 58);
+            supplierOrdersDataGridView.Location = new Point(666, 68);
             supplierOrdersDataGridView.Name = "supplierOrdersDataGridView";
             supplierOrdersDataGridView.RowHeadersWidth = 51;
             supplierOrdersDataGridView.Size = new Size(450, 188);
@@ -955,6 +970,7 @@
             // 
             // customerOrderPage
             // 
+            customerOrderPage.Controls.Add(label39);
             customerOrderPage.Controls.Add(clearCustomerOrderList);
             customerOrderPage.Controls.Add(loadCustomerOrderData);
             customerOrderPage.Controls.Add(customerOrderDetailsDataGridView);
@@ -995,7 +1011,7 @@
             // customerOrderDetailsDataGridView
             // 
             customerOrderDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            customerOrderDetailsDataGridView.Location = new Point(657, 312);
+            customerOrderDetailsDataGridView.Location = new Point(654, 312);
             customerOrderDetailsDataGridView.Name = "customerOrderDetailsDataGridView";
             customerOrderDetailsDataGridView.RowHeadersWidth = 51;
             customerOrderDetailsDataGridView.Size = new Size(419, 188);
@@ -1004,7 +1020,7 @@
             // customerOrdersDataGridView
             // 
             customerOrdersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            customerOrdersDataGridView.Location = new Point(657, 82);
+            customerOrdersDataGridView.Location = new Point(654, 82);
             customerOrdersDataGridView.Name = "customerOrdersDataGridView";
             customerOrdersDataGridView.RowHeadersWidth = 51;
             customerOrdersDataGridView.Size = new Size(419, 188);
@@ -1122,6 +1138,7 @@
             // 
             // transferOrderPage
             // 
+            transferOrderPage.Controls.Add(label40);
             transferOrderPage.Controls.Add(clearTransferOrderList);
             transferOrderPage.Controls.Add(loadTransferOrderData);
             transferOrderPage.Controls.Add(transferOrderDetailsDataGridView);
@@ -1162,7 +1179,7 @@
             // transferOrderDetailsDataGridView
             // 
             transferOrderDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            transferOrderDetailsDataGridView.Location = new Point(656, 295);
+            transferOrderDetailsDataGridView.Location = new Point(664, 295);
             transferOrderDetailsDataGridView.Name = "transferOrderDetailsDataGridView";
             transferOrderDetailsDataGridView.RowHeadersWidth = 51;
             transferOrderDetailsDataGridView.Size = new Size(443, 188);
@@ -1171,7 +1188,7 @@
             // transferOrdersDataGridView
             // 
             transferOrdersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            transferOrdersDataGridView.Location = new Point(656, 62);
+            transferOrdersDataGridView.Location = new Point(664, 62);
             transferOrdersDataGridView.Name = "transferOrdersDataGridView";
             transferOrdersDataGridView.RowHeadersWidth = 51;
             transferOrdersDataGridView.Size = new Size(443, 188);
@@ -1306,6 +1323,117 @@
             label33.TabIndex = 0;
             label33.Text = "Source Warehouse:";
             // 
+            // reportPage
+            // 
+            reportPage.Controls.Add(label41);
+            reportPage.Controls.Add(reportsDataGrid);
+            reportPage.Controls.Add(expirationReport);
+            reportPage.Controls.Add(transferOrder);
+            reportPage.Controls.Add(customerOrder);
+            reportPage.Controls.Add(supplierOrder);
+            reportPage.Controls.Add(currentInventory);
+            reportPage.Location = new Point(4, 29);
+            reportPage.Name = "reportPage";
+            reportPage.Size = new Size(1147, 586);
+            reportPage.TabIndex = 7;
+            reportPage.Text = "Reports";
+            reportPage.UseVisualStyleBackColor = true;
+            // 
+            // reportsDataGrid
+            // 
+            reportsDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            reportsDataGrid.Location = new Point(12, 128);
+            reportsDataGrid.Name = "reportsDataGrid";
+            reportsDataGrid.RowHeadersWidth = 51;
+            reportsDataGrid.Size = new Size(1132, 455);
+            reportsDataGrid.TabIndex = 5;
+            // 
+            // expirationReport
+            // 
+            expirationReport.Location = new Point(939, 38);
+            expirationReport.Name = "expirationReport";
+            expirationReport.Size = new Size(155, 29);
+            expirationReport.TabIndex = 4;
+            expirationReport.Text = "Expiration Report";
+            expirationReport.UseVisualStyleBackColor = true;
+            expirationReport.Click += expirationReport_Click;
+            // 
+            // transferOrder
+            // 
+            transferOrder.Location = new Point(717, 38);
+            transferOrder.Name = "transferOrder";
+            transferOrder.Size = new Size(133, 29);
+            transferOrder.TabIndex = 3;
+            transferOrder.Text = "Transfer Orders";
+            transferOrder.UseVisualStyleBackColor = true;
+            transferOrder.Click += transferOrder_Click;
+            // 
+            // customerOrder
+            // 
+            customerOrder.Location = new Point(498, 38);
+            customerOrder.Name = "customerOrder";
+            customerOrder.Size = new Size(130, 29);
+            customerOrder.TabIndex = 2;
+            customerOrder.Text = "Customer Orders";
+            customerOrder.UseVisualStyleBackColor = true;
+            customerOrder.Click += customerOrder_Click;
+            // 
+            // supplierOrder
+            // 
+            supplierOrder.Location = new Point(267, 38);
+            supplierOrder.Name = "supplierOrder";
+            supplierOrder.Size = new Size(142, 29);
+            supplierOrder.TabIndex = 1;
+            supplierOrder.Text = "Supplier Orders";
+            supplierOrder.UseVisualStyleBackColor = true;
+            supplierOrder.Click += supplierOrder_Click;
+            // 
+            // currentInventory
+            // 
+            currentInventory.Location = new Point(52, 38);
+            currentInventory.Name = "currentInventory";
+            currentInventory.Size = new Size(126, 29);
+            currentInventory.TabIndex = 0;
+            currentInventory.Text = "Stock Report";
+            currentInventory.UseVisualStyleBackColor = true;
+            currentInventory.Click += currentInventory_Click;
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Location = new Point(835, 35);
+            label38.Name = "label38";
+            label38.Size = new Size(112, 20);
+            label38.TabIndex = 19;
+            label38.Text = "Supplier Orders";
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Location = new Point(803, 47);
+            label39.Name = "label39";
+            label39.Size = new Size(120, 20);
+            label39.TabIndex = 10;
+            label39.Text = "Customer Orders";
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Location = new Point(831, 35);
+            label40.Name = "label40";
+            label40.Size = new Size(109, 20);
+            label40.TabIndex = 10;
+            label40.Text = "Transfer Orders";
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Location = new Point(980, 70);
+            label41.Name = "label41";
+            label41.Size = new Size(67, 20);
+            label41.TabIndex = 6;
+            label41.Text = "30 Days*";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1346,6 +1474,9 @@
             ((System.ComponentModel.ISupportInitialize)transferOrdersDataGridView).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            reportPage.ResumeLayout(false);
+            reportPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)reportsDataGrid).EndInit();
             ResumeLayout(false);
         }
 
@@ -1468,5 +1599,16 @@
         private Button clearSupplierOrderList;
         private Button clearCustomerOrderList;
         private Button clearTransferOrderList;
+        private TabPage reportPage;
+        private Button transferOrder;
+        private Button customerOrder;
+        private Button supplierOrder;
+        private Button currentInventory;
+        private Button expirationReport;
+        private DataGridView reportsDataGrid;
+        private Label label38;
+        private Label label39;
+        private Label label40;
+        private Label label41;
     }
 }
