@@ -89,6 +89,7 @@
             label22 = new Label();
             label21 = new Label();
             supplierOrderPage = new TabPage();
+            label38 = new Label();
             clearSupplierOrderList = new Button();
             loadSupplierOrderData = new Button();
             supplierOrderDetailsDataGridView = new DataGridView();
@@ -110,6 +111,7 @@
             supplierOrderSupplierComboBox = new ComboBox();
             supplierOrderWarehousesComboBox = new ComboBox();
             customerOrderPage = new TabPage();
+            label39 = new Label();
             clearCustomerOrderList = new Button();
             loadCustomerOrderData = new Button();
             customerOrderDetailsDataGridView = new DataGridView();
@@ -127,6 +129,7 @@
             label30 = new Label();
             label29 = new Label();
             transferOrderPage = new TabPage();
+            label40 = new Label();
             clearTransferOrderList = new Button();
             loadTransferOrderData = new Button();
             transferOrderDetailsDataGridView = new DataGridView();
@@ -146,16 +149,13 @@
             label34 = new Label();
             label33 = new Label();
             reportPage = new TabPage();
+            label41 = new Label();
             reportsDataGrid = new DataGridView();
             expirationReport = new Button();
             transferOrder = new Button();
             customerOrder = new Button();
             supplierOrder = new Button();
             currentInventory = new Button();
-            label38 = new Label();
-            label39 = new Label();
-            label40 = new Label();
-            label41 = new Label();
             tabControl1.SuspendLayout();
             warehousesPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -785,6 +785,15 @@
             supplierOrderPage.Text = "Supplier Order";
             supplierOrderPage.UseVisualStyleBackColor = true;
             // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Location = new Point(835, 35);
+            label38.Name = "label38";
+            label38.Size = new Size(112, 20);
+            label38.TabIndex = 19;
+            label38.Text = "Supplier Orders";
+            // 
             // clearSupplierOrderList
             // 
             clearSupplierOrderList.Location = new Point(536, 481);
@@ -988,6 +997,15 @@
             customerOrderPage.Text = "Customer Order";
             customerOrderPage.UseVisualStyleBackColor = true;
             // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Location = new Point(803, 47);
+            label39.Name = "label39";
+            label39.Size = new Size(120, 20);
+            label39.TabIndex = 10;
+            label39.Text = "Customer Orders";
+            // 
             // clearCustomerOrderList
             // 
             clearCustomerOrderList.Location = new Point(509, 487);
@@ -1155,6 +1173,15 @@
             transferOrderPage.TabIndex = 6;
             transferOrderPage.Text = "Transfer Order";
             transferOrderPage.UseVisualStyleBackColor = true;
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Location = new Point(831, 35);
+            label40.Name = "label40";
+            label40.Size = new Size(109, 20);
+            label40.TabIndex = 10;
+            label40.Text = "Transfer Orders";
             // 
             // clearTransferOrderList
             // 
@@ -1339,6 +1366,15 @@
             reportPage.Text = "Reports";
             reportPage.UseVisualStyleBackColor = true;
             // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Location = new Point(954, 70);
+            label41.Name = "label41";
+            label41.Size = new Size(131, 20);
+            label41.TabIndex = 6;
+            label41.Text = "Less than 30 Days*";
+            // 
             // reportsDataGrid
             // 
             reportsDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1397,42 +1433,6 @@
             currentInventory.Text = "Stock Report";
             currentInventory.UseVisualStyleBackColor = true;
             currentInventory.Click += currentInventory_Click;
-            // 
-            // label38
-            // 
-            label38.AutoSize = true;
-            label38.Location = new Point(835, 35);
-            label38.Name = "label38";
-            label38.Size = new Size(112, 20);
-            label38.TabIndex = 19;
-            label38.Text = "Supplier Orders";
-            // 
-            // label39
-            // 
-            label39.AutoSize = true;
-            label39.Location = new Point(803, 47);
-            label39.Name = "label39";
-            label39.Size = new Size(120, 20);
-            label39.TabIndex = 10;
-            label39.Text = "Customer Orders";
-            // 
-            // label40
-            // 
-            label40.AutoSize = true;
-            label40.Location = new Point(831, 35);
-            label40.Name = "label40";
-            label40.Size = new Size(109, 20);
-            label40.TabIndex = 10;
-            label40.Text = "Transfer Orders";
-            // 
-            // label41
-            // 
-            label41.AutoSize = true;
-            label41.Location = new Point(980, 70);
-            label41.Name = "label41";
-            label41.Size = new Size(67, 20);
-            label41.TabIndex = 6;
-            label41.Text = "30 Days*";
             // 
             // Form1
             // 

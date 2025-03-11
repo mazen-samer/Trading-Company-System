@@ -1087,16 +1087,22 @@ namespace Trading_Company
         {
             using (var context = new ApplicationDbContext())
             {
-                var supplierOrderReport = context.SupplyOrders
-                .Select(so => new
+                var supplierOrderReportFlat = context.SupplyOrderDetails
+                .Select(d => new
                 {
-                    OrderID = so.SupplyOrderID,
-                    Supplier = so.Supplier.Name,
-                    Warehouse = so.Warehouse.Name,
-                    OrderDate = so.OrderDate
+                    OrderID = d.SupplyOrder.SupplyOrderID,
+                    Supplier = d.SupplyOrder.Supplier.Name,
+                    Warehouse = d.SupplyOrder.Warehouse.Name,
+                    OrderDate = d.SupplyOrder.OrderDate,
+                    ItemName = d.Item.Name,
+                    Quantity = d.Quantity,
+                    ProductionDate = d.ProductionDate,
+                    ExpirationDate = d.ExpirationDate
                 })
                 .ToList();
-                reportsDataGrid.DataSource = supplierOrderReport;
+
+                reportsDataGrid.DataSource = supplierOrderReportFlat;
+
 
             }
         }
@@ -1105,16 +1111,18 @@ namespace Trading_Company
         {
             using (var context = new ApplicationDbContext())
             {
-                var customerOrderReport = context.CustomerOrders
-                .Select(co => new
+                var customerOrderReportFlat = context.CustomerOrderDetails
+                .Select(d => new
                 {
-                    OrderID = co.CustomerOrderID,
-                    Customer = co.Customer.Name,
-                    Warehouse = co.Warehouse.Name,
-                    OrderDate = co.OrderDate
+                    OrderID = d.CustomerOrder.CustomerOrderID,
+                    Customer = d.CustomerOrder.Customer.Name,
+                    Warehouse = d.CustomerOrder.Warehouse.Name,
+                    OrderDate = d.CustomerOrder.OrderDate,
+                    ItemName = d.Item.Name,
+                    Quantity = d.Quantity
                 })
                 .ToList();
-                reportsDataGrid.DataSource = customerOrderReport;
+                reportsDataGrid.DataSource = customerOrderReportFlat;
             }
         }
 
@@ -1122,17 +1130,19 @@ namespace Trading_Company
         {
             using (var context = new ApplicationDbContext())
             {
-                var transferReport = context.TransferOrders
-                .Select(to => new
+                var transferOrderReportFlat = context.TransferOrderDetails
+                .Select(d => new
                 {
-                    OrderID = to.TransferOrderID,
-                    SourceWarehouse = to.SourceWarehouse.Name,
-                    DestinationWarehouse = to.DestinationWarehouse.Name,
-                    OrderDate = to.OrderDate
+                    OrderID = d.TransferOrder.TransferOrderID,
+                    SourceWarehouse = d.TransferOrder.SourceWarehouse.Name,
+                    DestinationWarehouse = d.TransferOrder.DestinationWarehouse.Name,
+                    OrderDate = d.TransferOrder.OrderDate,
+                    ItemName = d.Item.Name,
+                    Quantity = d.Quantity,
+                    Supplier = d.Supplier.Name
                 })
                 .ToList();
-                reportsDataGrid.DataSource = transferReport;
-
+                reportsDataGrid.DataSource = transferOrderReportFlat;
             }
         }
 
