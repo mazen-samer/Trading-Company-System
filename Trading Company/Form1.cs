@@ -24,7 +24,7 @@ namespace Trading_Company
             LoadCustomerOrderItemsComboBox();
             LoadTransferOrderItemsIntoComboBox();
             LoadTransferOrderSuppliersIntoComboBox();
-            //LoadTransferOrderWarehousesIntoComboBox();
+            LoadTransferOrderWarehousesIntoComboBox();
         }
 
         #endregion
@@ -768,7 +768,6 @@ namespace Trading_Company
 
             using (var context = new ApplicationDbContext())
             {
-                // ✅ Don't set WithdrawalOrderID manually; let EF handle it
                 var newOrder = new CustomerOrder
                 {
                     CustomerID = customerId,
@@ -1012,11 +1011,11 @@ namespace Trading_Company
                     .Select(w => new { w.WarehouseID, w.Name })
                     .ToList();
 
-                transferOrderSourceWarehouseComboBox.DataSource = new List<object>(warehouses);
+                transferOrderSourceWarehouseComboBox.DataSource = warehouses;
                 transferOrderSourceWarehouseComboBox.DisplayMember = "Name";
                 transferOrderSourceWarehouseComboBox.ValueMember = "WarehouseID";
 
-                transferOrderDestinationWarehouseComboBox.DataSource = new List<object>(warehouses);
+                transferOrderDestinationWarehouseComboBox.DataSource = warehouses;
                 transferOrderDestinationWarehouseComboBox.DisplayMember = "Name";
                 transferOrderDestinationWarehouseComboBox.ValueMember = "WarehouseID";
             }
