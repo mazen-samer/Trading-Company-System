@@ -24,7 +24,7 @@ namespace Trading_Company
             LoadCustomerOrderItemsComboBox();
             LoadTransferOrderItemsIntoComboBox();
             LoadTransferOrderSuppliersIntoComboBox();
-            LoadTransferOrderWarehousesIntoComboBox();
+            //LoadTransferOrderWarehousesIntoComboBox();
         }
 
         #endregion
@@ -721,9 +721,10 @@ namespace Trading_Company
                 .Select(w => new { w.WarehouseID, w.Name })
                 .ToList();
 
-                customerOrderWarehousesComboBox.DataSource = new List<object>(warehouses);
+                customerOrderWarehousesComboBox.DataSource = warehouses;
                 customerOrderWarehousesComboBox.DisplayMember = "Name";
                 customerOrderWarehousesComboBox.ValueMember = "WarehouseID";
+
             }
         }
         void LoadCustomerOrderCustomersComboBox()
@@ -775,13 +776,13 @@ namespace Trading_Company
                     OrderDate = DateTime.Now
                 };
 
-                context.WithdrawalOrders.Add(newOrder);
+                context.CustomerOrders.Add(newOrder);
                 context.SaveChanges();
 
                 foreach (var item in customerOrderItems)
                 {
-                    item.WithdrawalOrderID = newOrder.WithdrawalOrderID;
-                    context.WithdrawalOrderDetails.Add(item);
+                    item.CustomerOrderID = newOrder.CustomerOrderID;
+                    context.CustomerOrderDetails.Add(item);
 
                     var warehouseItem = context.WarehouseItems
                         .FirstOrDefault(wi => wi.WarehouseID == warehouseId && wi.ItemID == item.ItemID);
@@ -815,10 +816,10 @@ namespace Trading_Company
         {
             using (var context = new ApplicationDbContext())
             {
-                var orders = context.WithdrawalOrders
+                var orders = context.CustomerOrders
                     .Select(o => new
                     {
-                        OrderID = o.WithdrawalOrderID,
+                        OrderID = o.CustomerOrderID,
                         OrderDate = o.OrderDate,
                         CustomerName = o.Customer.Name,
                         WarehouseName = o.Warehouse.Name
@@ -827,10 +828,10 @@ namespace Trading_Company
 
                 customerOrdersDataGridView.DataSource = orders;
 
-                var orderDetails = context.WithdrawalOrderDetails
+                var orderDetails = context.CustomerOrderDetails
                     .Select(d => new
                     {
-                        OrderID = d.WithdrawalOrderID,
+                        OrderID = d.CustomerOrderID,
                         ItemName = d.Item.Name,
                         Quantity = d.Quantity
                     })

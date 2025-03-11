@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Trading Company.csproj": {}
+    "E:\\ITI\\LINQ\\Trading-Company-System\\Trading Company\\Trading Company.csproj": {}
   },
   "projects": {
-    "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Trading Company.csproj": {
+    "E:\\ITI\\LINQ\\Trading-Company-System\\Trading Company\\Trading Company.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Trading Company.csproj",
+        "projectUniqueName": "E:\\ITI\\LINQ\\Trading-Company-System\\Trading Company\\Trading Company.csproj",
         "projectName": "Trading Company",
-        "projectPath": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\Trading Company.csproj",
+        "projectPath": "E:\\ITI\\LINQ\\Trading-Company-System\\Trading Company\\Trading Company.csproj",
         "packagesPath": "C:\\Users\\mazen\\.nuget\\packages\\",
-        "outputPath": "E:\\ITI\\LINQ\\Trading Company\\Trading Company\\obj\\",
+        "outputPath": "E:\\ITI\\LINQ\\Trading-Company-System\\Trading Company\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

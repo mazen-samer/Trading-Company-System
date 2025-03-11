@@ -9,7 +9,7 @@
         // Relationships
         public ICollection<WarehouseItem> WarehouseItems { get; set; }
         public ICollection<SupplyOrderDetail> SupplyOrderDetails { get; set; }
-        public ICollection<CustomerOrderDetail> WithdrawalOrderDetails { get; set; }
+        public ICollection<CustomerOrderDetail> CustomerOrderDetails { get; set; }
         public ICollection<TransferOrderDetail> TransferOrderDetails { get; set; }
     }
 }

@@ -2,8 +2,8 @@
 {
     public class CustomerOrderDetail
     {
-        public int WithdrawalOrderID { get; set; }
-        public CustomerOrder WithdrawalOrder { get; set; }
+        public int CustomerOrderID { get; set; }
+        public CustomerOrder CustomerOrder { get; set; }
 
         public int ItemID { get; set; }
         public Item Item { get; set; }

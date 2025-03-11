@@ -2,7 +2,7 @@
 {
     public class CustomerOrder
     {
-        public int WithdrawalOrderID { get; set; }
+        public int CustomerOrderID { get; set; }
         public int WarehouseID { get; set; }
         public Warehouse Warehouse { get; set; }
 
@@ -12,7 +12,7 @@
         public DateTime OrderDate { get; set; }
 
         // Relationships
-        public ICollection<CustomerOrderDetail> WithdrawalOrderDetails { get; set; }
+        public ICollection<CustomerOrderDetail> CustomerOrderDetails { get; set; }
     }
 
 }
