@@ -17,7 +17,7 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=Trade_Company;Integrated Security=True;TrustServerCertificate=True;");
+        optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Trade_Company;Integrated Security=True;TrustServerCertificate=True;");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
